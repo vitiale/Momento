@@ -41,6 +41,11 @@ public class Momento {
         double[] mrb=new double[aux];
         double[] ms=new double[aux];
         double[] sum=new double[aux];
+        double[] v1=new double[aux];
+        double[] v2=new double[aux];
+        double[] vrb=new double[aux];
+        double[] vs=new double[aux];
+        double[] sum_mcv=new double[aux];
         for(int i=0; i<long2.length; i++){
             long2[i]=altura_muro-(fijo*i);
             long1[i]=(fijo*i);
@@ -50,6 +55,10 @@ public class Momento {
             mrb[i]= ((long1[i]-altura_muro)>0)? ( (sigma_a*Math.pow(altura_muro, 2)*0.5*fe) + ((sigma_b-sigma_a)*Math.pow(altura_muro, 2)) * ( (1.0/6.0) *fe) + (xs*variacion_pae*fs) ) / h2 :0;
             ms[i]= ( (long1[i]>(altura_muro-xs))?variacion_pae*(long1[i]-(altura_muro-xs)):0 ) ;
             sum[i]= ( (m1[i]+m2[i]) * fe ) + (ms[i]*fs) + mrb[i];
+            v1[i]= long1[i]*sigma_a;
+            v2[i]= (((w2[i]-sigma_a)*long1[i])/2);
+            vrb[i]=  ((long1[i]-h1)>0)? ( (sigma_a*Math.pow(altura_muro, 2)*0.5*fe) + ((sigma_b-sigma_a)*Math.pow(altura_muro, 2)) * ( (1.0/6.0) *fe) + (xs*variacion_pae*fs) ) / h2 :0;
+            //vs[i]= long1>(altura_muro-xs)
         }
         for(int j=0; j<long2.length; j++){
             System.out.println((j+1) +"                      "+long1[j] +"                      "+long2[j]+"                      "+sigma_a+"                      "+ w2[j]+"                      "+ m1[j]+"                      "+ m2[j]+"                      "+ mrb[j]+"                              "+ ms[j]+"                           "+ sum[j]);
