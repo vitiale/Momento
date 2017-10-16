@@ -40,9 +40,9 @@ public class Frame extends javax.swing.JFrame {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         
         XYSeriesCollection xy=new XYSeriesCollection();
-        XYSeries serie1=new XYSeries("Serie1");
-        XYSeries serie2=new XYSeries("Serie2");
-        XYSeries serie3=new XYSeries("Serie3");
+        XYSeries serie1=new XYSeries("Curva de Momentos");
+        XYSeries serie2=new XYSeries("Acero corrido");
+        XYSeries serie3=new XYSeries("Bastón");
         
         //aqui trazamos la curva
         for(int i=0; i<eje_x.length; i++){
@@ -57,6 +57,10 @@ public class Frame extends javax.swing.JFrame {
         serie2.add(4,0);
         serie2.add(4,2.9);
         
+        //aqui trazamos baston
+        serie3.add(8,0);
+        serie3.add(8,1.0);
+        
         
 //        serie2.add(5, 1);
 //        serie2.add(6, 2);
@@ -65,25 +69,9 @@ public class Frame extends javax.swing.JFrame {
         
         xy.addSeries(serie1);
         xy.addSeries(serie2);
+        xy.addSeries(serie3);
 
-        // Visitas del sitio web 1
-//        dataset.setValue(100, SITIO_1, "Lunes");
-//        dataset.setValue(120, SITIO_1, "Martes");
-//        dataset.setValue(110, SITIO_1, "Miércoles");
-//        dataset.setValue(103, SITIO_1, "Jueves");
-//        dataset.setValue(106, SITIO_1, "Viernes");
-
-        // Visitas del sitio web 2
-//        dataset.setValue(60, SITIO_2, "Lunes");
-//        dataset.setValue(62, SITIO_2, "Martes");
-//        dataset.setValue(61, SITIO_2, "Miércoles");
-//        dataset.setValue(63, SITIO_2, "Jueves");
-//        dataset.setValue(66, SITIO_2, "Viernes");
-
-//        final CategoryDataset dataset = DatasetUtilities.createCategoryDataset(
-//            "Series ", "Type ", data
-//        );
-        // create the chart...
+        
         
         //mi example
         final JFreeChart mi_gr=ChartFactory.createXYLineChart("Diagrama de Momentos", "datos_x", "datos_y", xy );
