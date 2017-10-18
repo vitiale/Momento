@@ -20,7 +20,7 @@ import org.jfree.data.xy.XYSeriesCollection;
  *
  * @author Alba Proyecto
  */
-public class Frame extends javax.swing.JFrame {
+public class Frame_momento extends javax.swing.JFrame {
     
     private double[] eje_x;
     private double[] eje_y;
@@ -28,7 +28,7 @@ public class Frame extends javax.swing.JFrame {
     /**
      * Creates new form Frame
      */
-    public Frame(double [] eje_x, double [] eje_y) {
+    public Frame_momento(double [] eje_x, double [] eje_y) {
         
         this.eje_x=eje_x;
         this.eje_y=eje_y;
@@ -136,20 +136,20 @@ public class Frame extends javax.swing.JFrame {
 //                }
 //            }
 //        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Frame_momento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Frame_momento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Frame_momento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//            java.util.logging.Logger.getLogger(Frame_momento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //        //</editor-fold>
 //
 //        /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new Frame().setVisible(true);
+//                new Frame_momento().setVisible(true);
 //            }
 //        });
 //    }
