@@ -24,14 +24,18 @@ public class Frame_momento extends javax.swing.JFrame {
     
     private double[] eje_x;
     private double[] eje_y;
+    private double altura_muro;
+    private double posicion_acero_corrido;
 
     /**
      * Creates new form Frame
      */
-    public Frame_momento(double [] eje_x, double [] eje_y) {
+    public Frame_momento(double [] eje_x, double [] eje_y, double altura_muro, double posicion_acero_corrido) {
         
         this.eje_x=eje_x;
         this.eje_y=eje_y;
+        this.altura_muro=altura_muro;
+        this.posicion_acero_corrido=posicion_acero_corrido;//fi_mr
         
         setBounds(700, 200, 700, 500);
         String SITIO_1 = "PRIMERO";
@@ -54,8 +58,8 @@ public class Frame_momento extends javax.swing.JFrame {
 //        }
         
         //aqui trazamos el acero corrido
-        serie2.add(4,0);
-        serie2.add(4,2.9);
+        serie2.add(posicion_acero_corrido,0);
+        serie2.add(posicion_acero_corrido,altura_muro);
         
         //aqui trazamos baston
         serie3.add(8,0);

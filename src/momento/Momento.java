@@ -39,11 +39,14 @@ public class Momento {
         double fe = 1.6;
         double xs = altura_muro * 0.6;
         double pae = 5.07280459892461;
-        double pa = 3.572916667;
+        double pa = 3.549561538258196;
+        double fi_mr = 6.489;
+        //double pa = 3.572916667;
         //****variacion_pae y Ps del excel son lo mismo
         double variacion_pae = pae - pa;
         double factor = 100.0;
         int aux = (int) factor;
+        double posicion_bastones=17.2838;
         double fijo = altura_muro / factor;
         double[] long2 = new double[aux];
         double[] long1 = new double[aux];
@@ -92,9 +95,9 @@ public class Momento {
             System.out.println((j + 1) + "                      " + v1[j] + "                      " + v2[j] + "                      " + vrb[j] + "                      " + vs[j] + "                      " + sum_mcv[j]);
             System.out.println("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________");
         }
-        fr=new Frame_momento(sum,long2);
+        fr=new Frame_momento(sum,long2,altura_muro,fi_mr);
         fr.setVisible(true);
-        fc=new Frame_cortante(long2,sum_mcv);
+        fc=new Frame_cortante(long2,sum_mcv,posicion_bastones);
         fc.setVisible(true);
     }
 

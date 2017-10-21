@@ -25,14 +25,16 @@ public class Frame_cortante extends JFrame{
     
     private double[] eje_x;
     private double[] eje_y;
+    private double posicion_bastones;
 
     /**
      * Creates new form Frame
      */
-    public Frame_cortante(double [] eje_x, double [] eje_y) {
+    public Frame_cortante(double [] eje_x, double [] eje_y, double posicion_bastones) {
         
         this.eje_x=eje_x;
         this.eje_y=eje_y;
+        this.posicion_bastones=posicion_bastones;
         
         setBounds(700, 300, 500, 700);
         String SITIO_1 = "PRIMERO";
@@ -41,9 +43,9 @@ public class Frame_cortante extends JFrame{
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         
         XYSeriesCollection xy=new XYSeriesCollection();
-        XYSeries serie1=new XYSeries("Curva de Momentos");
-//        XYSeries serie2=new XYSeries("Acero corrido");
-//        XYSeries serie3=new XYSeries("Bastón");
+        XYSeries serie1=new XYSeries("Corte");
+        XYSeries serie2=new XYSeries("VC-");
+        XYSeries serie3=new XYSeries("VC+");
         
         //aqui trazamos la curva
         for(int i=0; i<eje_x.length; i++){
@@ -54,13 +56,13 @@ public class Frame_cortante extends JFrame{
 //            serie2.add(eje_y[i],eje_x[i]);
 //        }
         
-        //aqui trazamos el acero corrido
-//        serie2.add(4,0);
-//        serie2.add(4,2.9);
+        //aqui trazamos VC-
+        serie2.add(-posicion_bastones,0);
+        serie2.add(-posicion_bastones,eje_x[eje_x.length-1]);
         
-        //aqui trazamos baston
-//        serie3.add(8,0);
-//        serie3.add(8,1.0);
+        //aqui trazamos VC+
+        serie3.add(posicion_bastones,0);
+        serie3.add(posicion_bastones,eje_x[eje_x.length-1]);
         
         
 //        serie2.add(5, 1);
@@ -69,8 +71,8 @@ public class Frame_cortante extends JFrame{
 //        serie2.add(8, 4);
         
         xy.addSeries(serie1);
-//        xy.addSeries(serie2);
-//        xy.addSeries(serie3);
+        xy.addSeries(serie2);
+        xy.addSeries(serie3);
 
         
         
